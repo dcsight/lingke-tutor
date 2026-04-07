@@ -1,0 +1,120 @@
+{
+  "skill_name": "lingke-tutor",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "math-problem-solving",
+      "prompt": "帮我做一道领科风格的数学题：已知二次函数 f(x) = x² - 4x + 3，求其与x轴的交点坐标，并写出对称轴方程。",
+      "expected_output": "应该给出分步骤的解题过程，包括：1）令f(x)=0解方程；2）使用韦达定理或直接因式分解；3）对称轴公式x=-b/2a；4）最后询问学生是否理解并出一道类似题巩固",
+      "files": [],
+      "assertions": [
+        {
+          "type": "content_check",
+          "description": "回答中应包含具体解题步骤（编号或分点）",
+          "check": "contains_steps"
+        },
+        {
+          "type": "content_check",
+          "description": "回答中应有互动式提问（如\"明白了吗\"、\"要不要试一道\"）",
+          "check": "contains_interactive_question"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "eval_name": "essay-feedback",
+      "prompt": "请帮我批改这篇英语作文，这是给领科入学考试准备的：\n\nIn recent years, online learning has become increasingly popular. Some people think it is better than traditional classroom learning, while others disagree. What is your opinion?\n\nWrite an essay of about 150 words.\n\nMy essay:\nWith the development of technology, online learning is very popular now. I think it has many advantages. First, students can study at home and don't need to go to school. It saves a lot of time. Second, we can watch the video many times if we don't understand. Third, online learning is cheaper than traditional school.\n\nHowever, online learning also has some problems. Students may play games instead of studying. They don't have classmates to talk with.\n\nIn conclusion, I think online learning is good but we need to be self-disciplined.",
+      "expected_output": "应该按Ideas/Organization/Language/Accuracy四维度点评，找出具体句子给出Before/After改写建议，给出总体评级（Developing/Competent/Proficient/Advanced），并提供下次写作重点改进建议",
+      "files": [],
+      "assertions": [
+        {
+          "type": "content_check",
+          "description": "回答中应包含四个维度的点评（Ideas/Organization/Language/Accuracy）",
+          "check": "contains_four_dimensions"
+        },
+        {
+          "type": "content_check",
+          "description": "回答中应有具体句子的Before/After改写建议",
+          "check": "contains_before_after"
+        },
+        {
+          "type": "content_check",
+          "description": "回答中应给出总体评级",
+          "check": "contains_rating"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "eval_name": "mock-interview",
+      "prompt": "我想练习WLSA英文面试，来场模拟面试吧。我是9年级学生，目标是WLSA上海校区。",
+      "expected_output": "应该切换到面试官角色，用英文开始面试（从自我介绍开始），模拟真实WLSA面试场景，提问后等待学生回答",
+      "files": [],
+      "assertions": [
+        {
+          "type": "content_check",
+          "description": "回答应以面试官身份开场（声明面试开始）",
+          "check": "interviewer_role"
+        },
+        {
+          "type": "content_check",
+          "description": "面试开场应使用英文",
+          "check": "english_interview_start"
+        },
+        {
+          "type": "content_check",
+          "description": "应从自我介绍开始提问",
+          "check": "asks_self_introduction"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "eval_name": "study-planning",
+      "prompt": "我目前在读初二，想考领科教育上海校区，还有6个月时间准备。英语水平中等（新概念2学完了），数学几何比较薄弱。能帮我制定一个备考计划吗？",
+      "expected_output": "应该先进行诊断（确认学生信息），然后给出4-12周的备考计划，列出优先突破的3个模块，包含具体时间安排和学习建议",
+      "files": [],
+      "assertions": [
+        {
+          "type": "content_check",
+          "description": "回答中应包含时间规划（周数或阶段划分）",
+          "check": "contains_timeline"
+        },
+        {
+          "type": "content_check",
+          "description": "回答中应列出优先突破模块",
+          "check": "contains_priority_modules"
+        },
+        {
+          "type": "content_check",
+          "description": "回答中应针对学生薄弱点（几何）给出具体建议",
+          "check": "addresses_weakness"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "eval_name": "concept-explanation",
+      "prompt": "领科数学经常考的韦达定理是什么？能给我讲讲吗？",
+      "expected_output": "应该给出一句话核心定义，举一个领科风格的考题例子，给出解题步骤，提示常见陷阱，最后询问学生是否理解",
+      "files": [],
+      "assertions": [
+        {
+          "type": "content_check",
+          "description": "回答中应包含核心定义",
+          "check": "contains_definition"
+        },
+        {
+          "type": "content_check",
+          "description": "回答中应包含具体例子",
+          "check": "contains_example"
+        },
+        {
+          "type": "content_check",
+          "description": "回答中应提示常见陷阱/易错点",
+          "check": "contains_common_pitfalls"
+        }
+      ]
+    }
+  ]
+}
