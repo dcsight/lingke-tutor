@@ -7,7 +7,7 @@
 
 ## 简介
 
-领科虾是一个基于 WorkBuddy (CodeBuddy) 的 AI 家教 skill，专门为准备领科教育（Linke Education）和 WLSA 入学考试的学生提供：
+领科虾是一个 AI 家教 skill，专门为准备领科教育（Linke Education）和 WLSA 入学考试的学生提供：
 
 - 数学 / 英语 / 逻辑 考点精讲
 - 历年题型解题技巧
@@ -21,27 +21,27 @@
 - 准备报考 WLSA 的学生
 - 想了解国际学校入学考试风格的家长
 
-## 安装方法
+## 安装方式
 
-### 方式一：从文件安装（推荐）
+### 方式一：Claude Code 安装
 
-1. 下载本仓库的 `lingke-tutor.zip` 文件
-2. 打开 WorkBuddy (CodeBuddy)
-3. 进入「技能市场」→「从文件安装」
-4. 选择下载的 zip 文件
+1. 下载本仓库的 `lingke-tutor` 文件夹
+2. 将文件夹复制到 Claude Code 的 skills 目录：
+   ```bash
+   cp -r lingke-tutor ~/.claude/skills/
+   ```
+3. 重启 Claude Code 即可使用
 
-### 方式二：手动安装
+### 方式二：OpenClaw 安装
 
-```bash
-# 解压到 CodeBuddy 的 skill 目录
-unzip lingke-tutor.zip -d ~/.codebuddy/skills/
-
-# 重启 CodeBuddy 使技能生效
-```
+1. 在 OpenClaw 中打开 Skill 市场
+2. 点击「从本地安装」
+3. 选择 `lingke-tutor` 文件夹或打包的 `.skill` 文件
+4. 安装完成后即可在对话中使用
 
 ## 使用方法
 
-安装成功后，直接在 CodeBuddy 对话中输入以下内容即可激活：
+安装成功后，直接在对话中输入以下内容即可激活：
 
 | 场景 | 示例指令 |
 |------|----------|
@@ -56,10 +56,14 @@ unzip lingke-tutor.zip -d ~/.codebuddy/skills/
 ```
 lingke-tutor/
 ├── SKILL.md                    # Skill 主体定义
+├── README.md                   # 项目说明
+├── evals/
+│   └── evals.json              # 评估测试用例集
 └── references/
     ├── exam_overview.md        # 领科/WLSA 考试概览
     ├── math_strategies.md      # 数学解题策略
-    └── english_strategies.md   # 英语备考策略
+    ├── english_strategies.md   # 英语备考策略
+    └── teaching_templates.md   # 教学模式详细模板
 ```
 
 ## 知识库内容
